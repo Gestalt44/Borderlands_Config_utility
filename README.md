@@ -4,4 +4,4 @@ Developed using Unreal Engine 3, the initial graphics settings are stored in an 
 
 My configuration utility is a desktop app which uses javafx, scenebuilder and JavaSE File handling to make the process of editing the configuration file to improve game performance easier to non technically inclined people. Simply select the desired settings using the button and text box based java components and clikc on "SAVE" button to commit the changes to your actual configuration file saved in my documents folder.
 
-![Alt text](https://i.imgur.com/VuCHVAZ.png)
+![Alt text](https://i.imgur.com/YswU7jJ.png)
