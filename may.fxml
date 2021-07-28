@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BC.GUI_Controller">
+   <tabs>
+      <Tab text="Graphics">
+         <content>
+            <GridPane fx:id="main_window" gridLinesVisible="true">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="1100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="400.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="400.0" vgrow="ALWAYS" />
+               </rowConstraints>
+               <children>
+                  <SplitPane dividerPositions="0.5" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                    <items>
+                        <ScrollPane>
+                           <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0">
+                                 <children>
+                                    <VBox alignment="CENTER_LEFT" layoutX="5.0" layoutY="8.0" spacing="12.0">
+                                       <children>
+                                          <Label text="RES X">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="RES Y">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="132.0" prefHeight="22.0" prefWidth="157.0" text="MinShadowResolution">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="149.0" text="MaxShadowResolution">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="166.0" text="MaxWholeSceneDominantShadowResolution">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="DefaultPostProcessName">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="SkeletalMeshLODBias">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="ParticleLODBias">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="DetailMode">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="ShadowFilterQualityBias">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="MaxAnisotropy">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                        <ScrollPane>
+                           <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="230.0">
+                                 <children>
+                                    <VBox layoutY="2.0" spacing="10.0">
+                                       <children>
+                                          <TextField fx:id="res_x" onAction="#res_x_handler" />
+                                          <TextField fx:id="res_y" onAction="#res_y_handler" />
+                                          <TextField fx:id="min_Shadow_Resolution" layoutX="10.0" layoutY="45.0" onAction="#min_Shadow_Resolution_handler" />
+                                          <TextField fx:id="max_Shadow_Resolution" layoutX="10.0" layoutY="220.0" onAction="#max_Shadow_Resolution_handler" />
+                                          <TextField fx:id="MaxWholeSceneDominantShadowResolution" layoutX="10.0" layoutY="255.0" onAction="#MaxWholeSceneDominantShadowResolution_handler" />
+                                          <HBox>
+                                             <children>
+                                                <Button fx:id="willow" mnemonicParsing="false" onAction="#willow_Handler" text="WillowScenePostProcess" />
+                                                <Button fx:id="scene" mnemonicParsing="false" onAction="#scene_Handler" text="ScenePostProcess" />
+                                                <Button fx:id="cine" mnemonicParsing="false" onAction="#cine_Handler" text="CinematicPostProcess" />
+                                                <Button fx:id="ryan" mnemonicParsing="false" onAction="#ryan_Handler" text="RyanScenePostProcess" />
+                                             </children>
+                                          </HBox>
+                                          <HBox spacing="10.0">
+                                             <children>
+                                                <Button fx:id="sk_highest" mnemonicParsing="false" onAction="#sk_highest_handler" text="Highest" />
+                                                <Button fx:id="sk_high" mnemonicParsing="false" onAction="#sk_high_handler" text="High" />
+                                                <Button fx:id="sk_low" mnemonicParsing="false" onAction="#sk_low_handler" text="Normal" />
+                                                <Button fx:id="sk_lowest" mnemonicParsing="false" onAction="#sk_lowest_handler" text="Lowest" />
+                                             </children>
+                                          </HBox>
+                                          <HBox spacing="10.0">
+                                             <children>
+                                                <Button fx:id="p_highest" mnemonicParsing="false" onAction="#p_highest_handler" text="Highest" />
+                                                <Button fx:id="p_high" mnemonicParsing="false" onAction="#p_high_handler" text="High" />
+                                                <Button fx:id="p_low" mnemonicParsing="false" onAction="#p_low_handler" text="Normal" />
+                                                <Button fx:id="p_lowest" mnemonicParsing="false" onAction="#p_lowest_handler" text="Lowest" />
+                                             </children>
+                                          </HBox>
+                                          <HBox spacing="10.0">
+                                             <children>
+                                                <Button fx:id="detail_high" mnemonicParsing="false" onAction="#detail_highest_handler" text="High" />
+                                                <Button fx:id="detail_low" mnemonicParsing="false" onAction="#detail_low_handler" text="Normal" />
+                                                <Button fx:id="detail_lowest" mnemonicParsing="false" onAction="#detail_lowest_handler" text="Lowest" />
+                                             </children>
+                                          </HBox>
+                                          <HBox spacing="10.0">
+                                             <children>
+                                                <Button fx:id="shd_highest" mnemonicParsing="false" onAction="#shd_highest_handler" text="Highest" />
+                                                <Button fx:id="shd_high" mnemonicParsing="false" onAction="#shd_high_handler" text="High" />
+                                                <Button fx:id="shd_low" mnemonicParsing="false" onAction="#shd_low_handler" text="Normal" />
+                                                <Button fx:id="shd_lowest" mnemonicParsing="false" onAction="#shd_lowest_handler" text="Lowest" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets top="5.0" />
+                                       </padding>
+                                    </VBox>
+                                    <HBox layoutY="347.0" spacing="35.0">
+                                       <children>
+                                          <Button fx:id="Aniso_lowest" mnemonicParsing="false" onAction="#Aniso_lowest_handler" text="2X" />
+                                          <Button fx:id="Aniso_low" mnemonicParsing="false" onAction="#Aniso_low_handler" text="4X" />
+                                          <Button fx:id="Aniso_high" mnemonicParsing="false" onAction="#Aniso_high_handler" text="8X" />
+                                          <Button fx:id="Aniso_highest" mnemonicParsing="false" onAction="#Aniso_highest_handler" text="16X" />
+                                       </children>
+                                       <padding>
+                                          <Insets top="8.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                    </items>
+                  </SplitPane>
+                  <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0" GridPane.rowIndex="1">
+                    <items>
+                        <ScrollPane>
+                           <content>
+                            <AnchorPane>
+                                 <children>
+                                    <VBox layoutX="-0.10546875" spacing="16.0">
+                                       <children>
+                                          <Label text="Bloom">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Depth of Field">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Dynamic Decals">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Static Decals">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Dynamic Shadows">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Dynamic Light">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Motion Blur">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Ambient Occlusion">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Distortion">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="FXAA">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                        <ScrollPane>
+                           <content>
+                            <AnchorPane>
+                                 <children>
+                                    <VBox spacing="15.0">
+                                       <children>
+                                          <RadioButton fx:id="bloom_on" mnemonicParsing="false" onAction="#dof_on_handler" text="ON">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="dof_on" mnemonicParsing="false" onAction="#bloom_on_handler" text="ON">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="d_decal_on" mnemonicParsing="false" onAction="#d_decal_on_handler" text="ON">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="s_decal_on" mnemonicParsing="false" onAction="#s_decal_on_handler" text="ON">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="d_shadow_on" mnemonicParsing="false" onAction="#d_shadow_on_handler" text="ON">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="d_light_on" mnemonicParsing="false" onAction="#d_light_on_handler" text="ON">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="motion_blur_on" mnemonicParsing="false" onAction="#motion_blur_on_handler" text="ON">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="a_occulsion_on" mnemonicParsing="false" onAction="#a_occulsion_on_handler" text="ON">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="distortion_on" mnemonicParsing="false" onAction="#distortion_on_handler" text="ON">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="FXAA_on" mnemonicParsing="false" onAction="#FXAA_on_handler" text="ON">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                       </children>
+                                       <padding>
+                                          <Insets top="5.0" />
+                                       </padding>
+                                    </VBox>
+                                    <VBox layoutX="101.0" spacing="15.0">
+                                       <children>
+                                          <RadioButton fx:id="bloom_off" mnemonicParsing="false" onAction="#dof_off_handler" text="OFF">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="dof_off" mnemonicParsing="false" onAction="#bloom_off_handler" text="OFF">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="d_decal_off" mnemonicParsing="false" onAction="#d_decal_off_handler" text="OFF">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="s_decal_off" mnemonicParsing="false" onAction="#s_decal_off_handler" text="OFF">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="d_shadow_off" mnemonicParsing="false" onAction="#d_shadow_off_handler" text="OFF">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="d_light_off" mnemonicParsing="false" onAction="#d_light_off_handler" text="OFF">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="motion_blur_off" mnemonicParsing="false" onAction="#motion_blur_off_handler" text="OFF">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="a_occulsion_off" mnemonicParsing="false" onAction="#a_occulsion_off_handler" text="OFF">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="distortion_off" mnemonicParsing="false" onAction="#distortion_off_handler" text="OFF">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="FXAA_off" mnemonicParsing="false" onAction="#FXAA_off_handler" text="OFF">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </RadioButton>
+                                       </children>
+                                       <padding>
+                                          <Insets top="5.0" />
+                                       </padding>
+                                    </VBox>
+                                    <VBox layoutX="170.0">
+                                       <children>
+                                          <Button fx:id="save_btn" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#save_btn_handler" text="SAVE AND EXIT" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="Impact" size="36.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="50.0" top="50.0" />
+                                             </VBox.margin>
+                                             <effect>
+                                                <SepiaTone level="0.37" />
+                                             </effect>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>
