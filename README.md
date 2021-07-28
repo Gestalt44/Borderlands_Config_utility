@@ -1,4 +1,4 @@
-# Borderlands_Config_utility
+# Borderlands 2_Config_utility
 Borderlands 2 is FPS video game released by 2K games in 2012. 
 Developed using Unreal Engine 3, the initial graphics settings are stored in an .ini configuration file in My documents which is used to load graphical, audio, network and control settings on game launch. 
 
