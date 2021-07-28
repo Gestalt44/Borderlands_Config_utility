@@ -21,7 +21,6 @@ Developed using Unreal Engine 3, the initial graphics settings are stored in an 
 - **Using a Map would've been the ideal datastructure but i found out that the file contains some duplicate keys, hence i swithced to Arraylist.**
 - Finally the read_File arraylist is written at to disk at the actual location when the GUI_controller's Save and Exit button is fired.
 - Used Buffering and try catches all around.
-- 
 
 ### Pair
 
