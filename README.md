@@ -18,8 +18,8 @@ Developed using Unreal Engine 3, the initial graphics settings are stored in an 
 
 - Core Java/ JavaSE file handling classes that read, modify and write the .ini file. Uses Arraylist of custom type Pair as a temporary storage for the read file. 
 - Each modfiied property in the GUI_controller is added to the Arraylist changed_settings. To actually make the change, the changed_settings Arraylist is compared with the read_file Arraylist and the matching if a property occurs in both Arraylists, the value of that property is changed in the read_file Arraylist. 
-- **Using a Map would've been the ideal datastructure but i found out that the file contains some duplicate keys, hence i swithced to Arraylist.**
-- Finally the read_File arraylist is written at to disk at the actual location when the GUI_controller's Save and Exit button is fired.
+- **Using a Map would've been the ideal data structure but i found out that the file contains some duplicate keys, hence i swithced to Arraylist.**
+- Finally the read_File arraylist is written to the disk at the actual location when the GUI_controller's Save and Exit button is fired.
 - Used Buffering and try catches all around.
 
 ### Pair
